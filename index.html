@@ -4,45 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>シンプルな表のページ</title>
-    <style>
-        /* 画面中央に見やすく配置する設定 */
+
+
+<style>
         body {
             font-family: sans-serif;
             margin: 40px auto;
             max-width: 800px;
-            padding: 0 20px;
+            padding: 0 20px 60px 20px;
             color: #333;
+            background:#f0f0f0;
         }
         h1 {
             text-align: center;
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
-        /* 表全体のデザイン設定 */
         table {
             width: 100%;
-            border-collapse: collapse; /* 枠線を1本にまとめる */
+            border-collapse: collapse;
             margin-top: 10px;
+            background:#fff;
         }
-        /* 見出し（一番上の行）の設定 */
         th {
             background-color: #f2f2f2;
             color: #000;
             font-weight: bold;
         }
-        /* 全てのマス目の設定 */
         th, td {
             border: 1px solid #ccc;
             padding: 12px;
             text-align: left;
         }
-        /* 行を1行おきに背景色を変えて見やすくする設定 */
         tr:nth-child(even) {
             background-color: #fafafa;
         }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px; /* 表との間隔 */
+        }
+        button {
+            font-size: 24px;
+            padding: 20px 40px;
+            border-radius: 12px;
+            border: none;
+            background: #000000;
+            color: white;
+            cursor: pointer;
+        }
+        button:active {
+            background: #333333;
+        }
+
+
     </style>
 </head>
 <body>
+
 
     <table>
         </tr>
@@ -99,6 +118,94 @@
 
 
     </table>
+  <div class="button-container">
+    <button onclick="goRandom()">ゲンダイビトプロフィール帳</button>
+    </div>    
+
+
+  <script>
+    const pages = [
+      "https://nakamuraakari25i-hash.github.io/1table/",
+      "https://nakamuraakari25i-hash.github.io/2table/",
+      "https://nakamuraakari25i-hash.github.io/3table/",
+      "https://nakamuraakari25i-hash.github.io/4table/",
+      "https://nakamuraakari25i-hash.github.io/5table/",
+      "https://nakamuraakari25i-hash.github.io/6table/",
+      "https://nakamuraakari25i-hash.github.io/7table/",
+      "https://nakamuraakari25i-hash.github.io/8table/",
+      "https://nakamuraakari25i-hash.github.io/9table/",
+      "https://nakamuraakari25i-hash.github.io/10table/",
+      "https://nakamuraakari25i-hash.github.io/11table/",
+      "https://nakamuraakari25i-hash.github.io/12table/",
+      "https://nakamuraakari25i-hash.github.io/13table/",
+      "https://nakamuraakari25i-hash.github.io/14table/",
+      "https://nakamuraakari25i-hash.github.io/15table/",
+      "https://nakamuraakari25i-hash.github.io/16table/",
+      "https://nakamuraakari25i-hash.github.io/17table/",
+      "https://nakamuraakari25i-hash.github.io/18table/",
+      "https://nakamuraakari25i-hash.github.io/19table/",
+      "https://nakamuraakari25i-hash.github.io/20table/",
+      "https://nakamuraakari25i-hash.github.io/21table/",
+      "https://nakamuraakari25i-hash.github.io/22table/",
+      "https://nakamuraakari25i-hash.github.io/23table/",
+      "https://nakamuraakari25i-hash.github.io/24table/",
+      "https://nakamuraakari25i-hash.github.io/25table/",
+      "https://nakamuraakari25i-hash.github.io/26table/",
+      "https://nakamuraakari25i-hash.github.io/27table/",
+      "https://nakamuraakari25i-hash.github.io/28table/",
+      "https://nakamuraakari25i-hash.github.io/29table/",
+      "https://nakamuraakari25i-hash.github.io/30table/",
+      "https://nakamuraakari25i-hash.github.io/31table/",
+      "https://nakamuraakari25i-hash.github.io/32table/",
+      "https://nakamuraakari25i-hash.github.io/33table/",
+      "https://nakamuraakari25i-hash.github.io/34table/",
+      "https://nakamuraakari25i-hash.github.io/35table/",
+      "https://nakamuraakari25i-hash.github.io/36table/",
+      "https://nakamuraakari25i-hash.github.io/37table/",
+      "https://nakamuraakari25i-hash.github.io/38table/",
+      "https://nakamuraakari25i-hash.github.io/39table/",
+      "https://nakamuraakari25i-hash.github.io/40table/",
+      "https://nakamuraakari25i-hash.github.io/41table/",
+      "https://nakamuraakari25i-hash.github.io/42table/",
+      "https://nakamuraakari25i-hash.github.io/43table/",
+      "https://nakamuraakari25i-hash.github.io/44table/",
+      "https://nakamuraakari25i-hash.github.io/45table/",
+      "https://nakamuraakari25i-hash.github.io/46table/",
+      "https://nakamuraakari25i-hash.github.io/47table/",
+      "https://nakamuraakari25i-hash.github.io/48table/",
+      "https://nakamuraakari25i-hash.github.io/49table/",
+      "https://nakamuraakari25i-hash.github.io/50table/",
+      "https://nakamuraakari25i-hash.github.io/51table/",
+      "https://nakamuraakari25i-hash.github.io/52table/",
+      "https://nakamuraakari25i-hash.github.io/53table/",
+      "https://nakamuraakari25i-hash.github.io/54table/",
+      "https://nakamuraakari25i-hash.github.io/55table/",
+      "https://nakamuraakari25i-hash.github.io/56table/",
+      "https://nakamuraakari25i-hash.github.io/57table/",
+      "https://nakamuraakari25i-hash.github.io/58table/",
+      "https://nakamuraakari25i-hash.github.io/59table/",
+      "https://nakamuraakari25i-hash.github.io/60table/",
+      "https://nakamuraakari25i-hash.github.io/61table/",
+      "https://nakamuraakari25i-hash.github.io/62table/",
+      "https://nakamuraakari25i-hash.github.io/63table/",
+      "https://nakamuraakari25i-hash.github.io/64table/",
+      "https://nakamuraakari25i-hash.github.io/65table/",
+      "https://nakamuraakari25i-hash.github.io/66table/",
+      "https://nakamuraakari25i-hash.github.io/67table/",
+      "https://nakamuraakari25i-hash.github.io/68table/",
+      "https://nakamuraakari25i-hash.github.io/69table/",
+      "https://nakamuraakari25i-hash.github.io/70table/",
+      "https://nakamuraakari25i-hash.github.io/71table/",
+      "https://nakamuraakari25i-hash.github.io/72table/",
+      "https://nakamuraakari25i-hash.github.io/73table/",
+      "https://nakamuraakari25i-hash.github.io/74table/",
+      "https://nakamuraakari25i-hash.github.io/75table/"
+    ];
+    function goRandom() {
+      const url = pages[Math.floor(Math.random() * pages.length)];
+      window.location.href = url;
+    }
+  </script>
 
 </body>
 </html>
